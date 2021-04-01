@@ -20,9 +20,10 @@ function printTime() {
 
 function printMinutes() {
   // ... your code goes here
-
+  
   minDec.innerText = Math.floor(chronometer.getMinutes() / 10);
   minUni.innerText = chronometer.getMinutes() % 10;
+  return chronometer.currentTime
 }
 
 function printSeconds() {
@@ -39,15 +40,14 @@ function printSplit() {
   let list = document.createElement("li");
   list.innerHTML = chronometer.splitClick();
 
-  let ol = document.querySelector("#splits");
-  ol.appendChild(list);
+  this.splits.appendChild(list);
 }
 
 function clearSplits() {
   let list = document.querySelectorAll("#splits li");
-  let ol = document.querySelector("#splits");
+  
   list.forEach((list)=>{
-    ol.removeChild(list)
+    this.splits.removeChild(list)
   })
   ;
 }
@@ -107,4 +107,5 @@ btnRight.addEventListener("click", () => {
     this.setResetBtn();
   }
 });
-console.log(this.printTime().this.sec)
+all = this.printTime()
+console.log(all)
